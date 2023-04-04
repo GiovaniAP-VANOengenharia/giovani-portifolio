@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { Container, TextContainer, InfosContainer, CodeItem } from './styles';
-import picture from '../../assets/pessoa.webp';
+import picture from '../../asset/Perfil.webp';
 
 function HomeHero() {
   return (
@@ -16,10 +16,10 @@ function HomeHero() {
             <span className="comment">//Minha apresentação</span>
             <span className="purple">Infos</span> {'\u007B'}
             <div>
-              Nome: <span className="blue">Gabriel,</span>
+              Nome: <span className="blue">Giovani,</span>
             </div>
             <div>
-              Sobrenome: <span className="blue">Borges</span>
+              Sobrenome: <span className="blue">Alves Pereira</span>
             </div>
             {'\u007D'}
           </CodeItem>
