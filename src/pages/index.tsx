@@ -11,8 +11,13 @@ import Conhecimentos from '../components/Conhecimentos';
 import FormContato from '../components/FormContato';
 import Footer from '../components/Footer';
 import 'aos/dist/aos.css';
+import IProjeto from '../interfaces';
 
-export default function Home() {
+interface HomeProps {
+  projetos: IProjeto[];
+}
+
+export default function Home({ projetos }: HomeProps) {
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -40,7 +45,7 @@ export default function Home() {
       <main className="container">
         <HomeHero />
         <Experiencias />
-        <Projetos />
+        <Projetos projetos={projetos} />
         <Conhecimentos />
         <FormContato />
       </main>

@@ -2,6 +2,11 @@ import Head from 'next/head';
 import Header from '../../components/Header';
 import ProjetoItem from '../../components/ProjetoItem';
 import { ProjetosContainer } from '../../styles/ProjetosStyles';
+import IProjeto from '../../interfaces';
+
+export interface ProjetoProps {
+  projetos: IProjeto[];
+}
 
 export default function Projetos({ projetos }: ProjetoProps) {
   return (

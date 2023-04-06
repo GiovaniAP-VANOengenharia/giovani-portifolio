@@ -2,6 +2,11 @@ import Link from 'next/link';
 import SectionTitle from '../SectionTitle';
 import ProjetoItem from './ProjetoItem';
 import { Container } from './styles';
+import IProjeto from '../../interfaces';
+
+interface ProjetosProps {
+  projetos: IProjeto[];
+}
 
 function Projetos({ projetos }: ProjetosProps) {
   return (
