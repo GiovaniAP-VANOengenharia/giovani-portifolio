@@ -3,19 +3,6 @@ import SectionTitle from '../SectionTitle';
 import ProjetoItem from './ProjetoItem';
 import { Container } from './styles';
 
-interface IProjeto {
-  slug: string;
-  title: string;
-  type: string;
-  description: string;
-  link: string;
-  thumbnail: string;
-}
-
-interface ProjetosProps {
-  projetos: IProjeto[];
-}
-
 function Projetos({ projetos }: ProjetosProps) {
   return (
     <Container>
