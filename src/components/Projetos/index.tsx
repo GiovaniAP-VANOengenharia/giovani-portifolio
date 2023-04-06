@@ -2,15 +2,7 @@ import Link from 'next/link';
 import SectionTitle from '../SectionTitle';
 import ProjetoItem from './ProjetoItem';
 import { Container } from './styles';
-
-interface IProjeto {
-  slug: string;
-  title: string;
-  type: string;
-  description: string;
-  link: string;
-  thumbnail: string;
-}
+import IProjeto from '../../interfaces';
 
 interface ProjetosProps {
   projetos: IProjeto[];

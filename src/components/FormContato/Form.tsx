@@ -14,7 +14,7 @@ export default function Form() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    if (!nome || !email || !mensagem) {
+    if (!nome.trim() || !email.trim() || !mensagem.trim()) {
       toast('Preencha todos os campos para enviar sua mensagem!', {
         style: {
           background: theme.error,

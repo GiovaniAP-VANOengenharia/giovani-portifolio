@@ -1,23 +1,12 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
-import Prismic from '@prismicio/client';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import BannerProjeto from '../../../components/BannerProjeto';
 import Header from '../../../components/Header';
-import { getPrismicClient } from '../../../services/prismic';
 import { ProjetoContainer } from '../../../styles/ProjetoStyles';
 import LoadingScreen from '../../../components/LoadingScreen';
+import IProjeto from '../../../interfaces';
 
-interface IProjeto {
-  slug: string;
-  title: string;
-  type: string;
-  description: string;
-  link: string;
-  thumbnail: string;
-}
-
-interface ProjetoProps {
+export interface ProjetoProps {
   projeto: IProjeto;
 }
 
@@ -55,44 +44,3 @@ export default function Projeto({ projeto }: ProjetoProps) {
     </ProjetoContainer>
   );
 }
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const prismic = getPrismicClient();
-  const projetos = await prismic.query([
-    Prismic.predicates.at('document.type', 'pro')
-  ]);
-
-  const paths = projetos.results.map(projeto => ({
-    params: {
-      slug: projeto.uid
-    }
-  }));
-
-  return {
-    paths,
-    fallback: true
-  };
-};
-
-export const getStaticProps: GetStaticProps = async context => {
-  const prismic = getPrismicClient();
-  const { slug } = context.params;
-
-  const response = await prismic.getByUID('pro', String(slug), {});
-
-  const projeto = {
-    slug: response.uid,
-    title: response.data.title,
-    type: response.data.type,
-    description: response.data.description,
-    link: response.data.link.url,
-    thumbnail: response.data.thumbnail.url
-  };
-
-  return {
-    props: {
-      projeto
-    },
-    revalidate: 86400
-  };
-};
