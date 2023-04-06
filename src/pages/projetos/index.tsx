@@ -1,10 +1,12 @@
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
 import Header from '../../components/Header';
 import ProjetoItem from '../../components/ProjetoItem';
 import { ProjetosContainer } from '../../styles/ProjetosStyles';
+import { ProjectsData } from '../../services/projects_data';
 import IProjeto from '../../interfaces';
 
-export interface ProjetoProps {
+interface ProjetoProps {
   projetos: IProjeto[];
 }
 
@@ -31,10 +33,9 @@ export default function Projetos({ projetos }: ProjetoProps) {
       <main className="container">
         {projetos.map(projeto => (
           <ProjetoItem
-            key={projeto.slug}
+            key={projeto.title}
             title={projeto.title}
-            type={projeto.type}
-            slug={projeto.slug}
+            slug={projeto.title}
             imgUrl={projeto.thumbnail}
           />
         ))}
@@ -42,3 +43,20 @@ export default function Projetos({ projetos }: ProjetoProps) {
     </ProjetosContainer>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const projetos = ProjectsData.map(projeto => ({
+    slug: projeto.title,
+    title: projeto.title,
+    description: projeto.description,
+    link: projeto.link,
+    thumbnail: projeto.thumbnail
+  }));
+
+  return {
+    props: {
+      projetos
+    },
+    revalidate: 86400
+  };
+};

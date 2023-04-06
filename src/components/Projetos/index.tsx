@@ -16,11 +16,10 @@ function Projetos({ projetos }: ProjetosProps) {
       <section>
         {projetos.slice(0, 3).map(projeto => (
           <ProjetoItem
-            key={projeto.slug}
-            img={projeto.thumbnail}
+            key={projetos.indexOf(projeto)}
             title={projeto.title}
-            type={projeto.type}
-            slug={projeto.slug}
+            slug={projeto.title}
+            img={projeto.thumbnail}
           />
         ))}
       </section>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import Head from 'next/head';
 import { HomeContainer } from '../styles/HomeStyles.ts ';
@@ -11,15 +11,14 @@ import Conhecimentos from '../components/Conhecimentos';
 import FormContato from '../components/FormContato';
 import Footer from '../components/Footer';
 import 'aos/dist/aos.css';
-import IProjeto from '../interfaces';
+import { ProjectsData } from '../services/projects_data';
 
-interface HomeProps {
-  projetos: IProjeto[];
-}
+export default function Home() {
+  const [projects, setProjects] = useState([]);
 
-export default function Home({ projetos }: HomeProps) {
   useEffect(() => {
     Aos.init({ duration: 1500 });
+    setProjects(ProjectsData);
   }, []);
 
   return (
@@ -45,7 +44,7 @@ export default function Home({ projetos }: HomeProps) {
       <main className="container">
         <HomeHero />
         <Experiencias />
-        <Projetos projetos={projetos} />
+        <Projetos projetos={projects} />
         <Conhecimentos />
         <FormContato />
       </main>
