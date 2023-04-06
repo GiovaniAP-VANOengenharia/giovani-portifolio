@@ -9,7 +9,7 @@ function HomeHero() {
       <div>
         <TextContainer>
           <h1>Olá</h1>
-          <h2>Me chamo Gabriel</h2>
+          <h2>Me chamo Giovani</h2>
         </TextContainer>
         <InfosContainer>
           <CodeItem data-aos="zoom-in">

@@ -35,7 +35,8 @@ export default function Projetos({ projetos }: ProjetoProps) {
           <ProjetoItem
             key={projeto.title}
             title={projeto.title}
-            slug={projeto.title}
+            type={projeto.type}
+            slug={projeto.slug}
             imgUrl={projeto.thumbnail}
           />
         ))}
@@ -46,10 +47,10 @@ export default function Projetos({ projetos }: ProjetoProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const projetos = ProjectsData.map(projeto => ({
-    slug: projeto.title,
+    slug: projeto.slug,
     title: projeto.title,
+    type: projeto.type,
     description: projeto.description,
-    link: projeto.link,
     thumbnail: projeto.thumbnail
   }));
 
