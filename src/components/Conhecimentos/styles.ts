@@ -9,7 +9,8 @@ export const Container = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8rem;
+    flex-wrap: wrap;
+    gap: 5rem;
 
     @media (max-width: 1000px) {
       gap: 5rem;
@@ -26,7 +27,7 @@ export const Container = styled.section`
 export const ConhecimentoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
 
@@ -38,8 +39,8 @@ export const ConhecimentoContainer = styled.div`
   }
 
   svg {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 5rem;
+    height: 5rem;
     color: ${({ theme }) => theme.secondary};
     transition: 0.3s;
   }
