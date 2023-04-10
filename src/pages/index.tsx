@@ -5,13 +5,14 @@ import { HomeContainer } from '../styles/HomeStyles.ts ';
 
 import Header from '../components/Header';
 import HomeHero from '../components/HomeHero';
-import Experiencias from '../components/Experiencias';
+// import Experiencias from '../components/Experiencias';
 import Projetos from '../components/Projetos';
 import Conhecimentos from '../components/Conhecimentos';
 import FormContato from '../components/FormContato';
 import Footer from '../components/Footer';
 import 'aos/dist/aos.css';
 import { ProjectsData } from '../services/projects_data';
+import SobreMim from '../components/SobreMim';
 
 export default function Home() {
   const [projects, setProjects] = useState([]);
@@ -43,7 +44,7 @@ export default function Home() {
 
       <main className="container">
         <HomeHero />
-        <Experiencias />
+        <SobreMim />
         <Projetos projetos={projects} />
         <Conhecimentos />
         <FormContato />

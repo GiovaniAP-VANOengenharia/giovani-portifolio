@@ -9,27 +9,28 @@ function HomeHero() {
       <div>
         <TextContainer>
           <h1>Olá</h1>
-          <h2>Me chamo Gabriel</h2>
+          <h2>Me chamo Giovani</h2>
         </TextContainer>
         <InfosContainer>
           <CodeItem data-aos="zoom-in">
             <span className="comment">//Minha apresentação</span>
-            <span className="purple">Infos</span> {'\u007B'}
+            <span className="purple">Infos =</span> {'\u007B'}
             <div>
-              Nome: <span className="blue">Giovani,</span>
+              Nome: <span className="blue"> 'Giovani',</span>
             </div>
             <div>
-              Sobrenome: <span className="blue">Alves Pereira</span>
+              Sobrenome: <span className="blue"> 'Alves Pereira',</span>
             </div>
             {'\u007D'}
           </CodeItem>
           <CodeItem data-aos="zoom-in">
-            <span className="purple">Cargo</span> {'\u007B'}
+            <span className="purple">MoreInfos =</span> {'\u007B'}
             <div>
-              Função: <span className="blue">Dev Front-end,</span>
+              Stack: <span className="blue"> 'Dev Full Stack',</span>
             </div>
             <div>
-              Empresa: <span className="blue">Cidade Alta</span>
+              Experiência:
+              <span className="blue"> 'Em transição de carreira'</span>
             </div>
             {'\u007D'}
           </CodeItem>

@@ -24,19 +24,15 @@ export const ProjetoContainer = styled.div`
       background: ${({ theme }) => theme.primary};
       padding: 0.8rem 3rem;
       border-radius: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
       border: none;
       transition: 0.5s;
-      margin-top: 2rem;
+      margin: 2rem 2rem 0 0;
 
       &:hover {
         background: ${({ theme }) => darken(0.05, theme.primary)};
-      }
-
-      a {
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 1.5rem;
-        font-weight: 300;
       }
     }
 

@@ -18,7 +18,7 @@ function Projetos({ projetos }: ProjetosProps) {
           <ProjetoItem
             key={projetos.indexOf(projeto)}
             title={projeto.title}
-            slug={projeto.title}
+            slug={projeto.slug}
             img={projeto.thumbnail}
           />
         ))}

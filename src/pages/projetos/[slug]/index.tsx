@@ -18,6 +18,10 @@ export default function Projeto({ projeto }: ProjetoProps) {
     return <LoadingScreen />;
   }
 
+  function handleRedirect(url: string) {
+    window.open(url);
+  }
+
   return (
     <ProjetoContainer>
       <Head>
@@ -31,12 +35,20 @@ export default function Projeto({ projeto }: ProjetoProps) {
       </Head>
 
       <Header />
-      <BannerProjeto title={projeto.title} imgUrl={projeto.thumbnail} />
+      <BannerProjeto
+        title={projeto.title}
+        type={projeto.type}
+        imgUrl={projeto.thumbnail}
+      />
 
       <main>
         <p>{projeto.description}</p>
-        <button type="button">
-          <a href={projeto.link}>Ver projeto online</a>
+        <button type="button" onClick={() => handleRedirect(projeto.gitHub)}>
+          Ver no gitHub
+        </button>
+
+        <button type="button" onClick={() => handleRedirect(projeto.deploy)}>
+          Ver projeto online
         </button>
       </main>
     </ProjetoContainer>
@@ -48,7 +60,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = pruducts.map(projeto => ({
     params: {
-      slug: projeto.title
+      slug: projeto.slug
     }
   }));
 
@@ -61,13 +73,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async context => {
   const { slug } = context.params;
 
-  const project = ProjectsData.find(proj => proj.title === slug);
+  const project = ProjectsData.find(proj => proj.slug === slug);
 
   const projeto = {
-    slug: project.title,
+    slug: project.slug,
     title: project.title,
+    type: project.type,
     description: project.description,
-    link: project.link,
+    gitHub: project.gitHub,
     thumbnail: project.thumbnail
   };
 

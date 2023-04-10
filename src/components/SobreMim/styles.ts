@@ -12,29 +12,30 @@ export const Container = styled.div`
     font-size: 4.5rem;
   }
 
-  h2 {
-    color: ${({ theme }) => theme.secondary};
+  p {
+    color: ${({ theme }) => theme.textLight};
+    font-size: 1.5rem;
     font-weight: 300;
-    font-size: 2.5rem;
+    text-align: justify;
   }
 
   @media (max-width: 1000px) {
     h1 {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
     }
 
-    h2 {
-      font-size: 1.5rem;
+    p {
+      font-size: 1rem;
     }
   }
 
   @media (max-width: 500px) {
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
 
-    h2 {
-      font-size: 1rem;
+    p {
+      font-size: 0.8rem;
     }
   }
 `;
