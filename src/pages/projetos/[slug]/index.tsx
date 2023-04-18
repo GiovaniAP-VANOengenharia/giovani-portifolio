@@ -81,6 +81,7 @@ export const getStaticProps: GetStaticProps = async context => {
     type: project.type,
     description: project.description,
     gitHub: project.gitHub,
+    deploy: project.deploy,
     thumbnail: project.thumbnail
   };
 
