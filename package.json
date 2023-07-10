@@ -2,7 +2,7 @@
   "name": "template-initial-config-next-ts-eslint-prettier",
   "version": "1.0",
   "private": true,
-  "main": "./src/pages*_app.tsx",
+  "main": "./src/pages/index.tsx",
   "scripts": {
     "dev": "next dev",
     "start": "next start",
