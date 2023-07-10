@@ -15,7 +15,7 @@ OAuth2_client.setCredentials({ refresh_token: refreshToken });
 
 const accessToken = OAuth2_client.getAccessToken();
 
-const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport(<any>{
   service: 'gmail',
   auth: {
     type: 'OAuth2',
